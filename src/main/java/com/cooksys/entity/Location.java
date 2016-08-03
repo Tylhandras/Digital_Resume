@@ -18,6 +18,9 @@ public class Location {
 	@JoinColumn
 	private Long areaId;
 	
+	@JoinColumn
+	private Date currentDay;
+	
 	@Column
 	private String title;
 	
@@ -28,40 +31,13 @@ public class Location {
 	private String description;
 	
 	@Column
-	private Long allTimeAnon = 0L;
+	private Long anonHits = 0L;
 	
 	@Column
-	private Long weekAnon = 0L;
+	private Long userHits = 0L;
 	
 	@Column
-	private Long monthAnon = 0L;
-	
-	@Column
-	private Long yearAnon = 0L;
-	
-	@Column
-	private Long allTimeUser = 0L;
-	
-	@Column
-	private Long weekUser = 0L;
-	
-	@Column
-	private Long monthUser = 0L;
-	
-	@Column
-	private Long yearUser = 0L;
-	
-	@Column
-	private Long allTimeReg = 0L;
-	
-	@Column
-	private Long weekReg = 0L;
-	
-	@Column
-	private Long monthReg = 0L;
-	
-	@Column
-	private Long yearReg = 0L;
+	private Long registers = 0L;
 
 	public Location() {
 		super();
@@ -90,6 +66,14 @@ public class Location {
 		this.areaId = areaId;
 	}
 
+	public Date getCurrentDay() {
+		return currentDay;
+	}
+
+	public void setCurrentDay(Date currentDay) {
+		this.currentDay = currentDay;
+	}
+
 	public String getTitle() {
 		return title;
 	}
@@ -114,100 +98,28 @@ public class Location {
 		this.description = description;
 	}
 
-	public Long getAllTimeAnon() {
-		return allTimeAnon;
+	public Long getAnonHits() {
+		return anonHits;
 	}
 
-	public void setAllTimeAnon(Long allTimeAnon) {
-		this.allTimeAnon = allTimeAnon;
+	public void setAnonHits(Long anonHits) {
+		this.anonHits = anonHits;
 	}
 
-	public Long getWeekAnon() {
-		return weekAnon;
+	public Long getUserHits() {
+		return userHits;
 	}
 
-	public void setWeekAnon(Long weekAnon) {
-		this.weekAnon = weekAnon;
+	public void setUserHits(Long userHits) {
+		this.userHits = userHits;
 	}
 
-	public Long getMonthAnon() {
-		return monthAnon;
+	public Long getRegisters() {
+		return registers;
 	}
 
-	public void setMonthAnon(Long monthAnon) {
-		this.monthAnon = monthAnon;
-	}
-
-	public Long getYearAnon() {
-		return yearAnon;
-	}
-
-	public void setYearAnon(Long yearAnon) {
-		this.yearAnon = yearAnon;
-	}
-
-	public Long getAllTimeUser() {
-		return allTimeUser;
-	}
-
-	public void setAllTimeUser(Long allTimeUser) {
-		this.allTimeUser = allTimeUser;
-	}
-
-	public Long getWeekUser() {
-		return weekUser;
-	}
-
-	public void setWeekUser(Long weekUser) {
-		this.weekUser = weekUser;
-	}
-
-	public Long getMonthUser() {
-		return monthUser;
-	}
-
-	public void setMonthUser(Long monthUser) {
-		this.monthUser = monthUser;
-	}
-
-	public Long getYearUser() {
-		return yearUser;
-	}
-
-	public void setYearUser(Long yearUser) {
-		this.yearUser = yearUser;
-	}
-
-	public Long getAllTimeReg() {
-		return allTimeReg;
-	}
-
-	public void setAllTimeReg(Long allTimeReg) {
-		this.allTimeReg = allTimeReg;
-	}
-
-	public Long getWeekReg() {
-		return weekReg;
-	}
-
-	public void setWeekReg(Long weekReg) {
-		this.weekReg = weekReg;
-	}
-
-	public Long getMonthReg() {
-		return monthReg;
-	}
-
-	public void setMonthReg(Long monthReg) {
-		this.monthReg = monthReg;
-	}
-
-	public Long getYearReg() {
-		return yearReg;
-	}
-
-	public void setYearReg(Long yearReg) {
-		this.yearReg = yearReg;
+	public void setRegisters(Long registers) {
+		this.registers = registers;
 	}
 
 }
