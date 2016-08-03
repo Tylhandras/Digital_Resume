@@ -1,0 +1,83 @@
+<div class="container-fluid">
+	<div class="col-md-10 col-md-offset-1">
+		<div class="jumbotron">
+			<h1>Admin Panel</h1>
+		</div>
+		<div>
+			<form class="form-horizontal">
+				<div class="form-group">
+					<label for="name" class="col-sm-2 control-label">{{adminController.address}}</label>
+					<buttontype="submit" class="btn btn-success" ng-click="adminController.goToUser()">User Panel</button>
+				</div>
+				<section>
+					<ul class="nav nav-tabs">
+						<li ng-class="{ active:adminController.isSet(1) }">
+              				<a href="" ng-click="adminController.setTab(1)">Link Generation</a>
+            			</li>
+						<li ng-class="{ active:adminController.isSet(2) }">
+              				<a href="" ng-click="adminController.setTab(2)">Activity</a>
+            			</li>
+            			<li ng-class="{ active:adminController.isSet(3) }">
+            				<a href="" ng-click="adminController.setTab(3)">Conversion Rates</a>
+            			</li>
+					</ul>
+					<div ng-show="adminController.isSet(1)">
+						<div class="col-sm-8 spaceTop">
+							<input type="text" placeholder="Label" ng-model="adminController.title">
+							<button type="submit" class="btn btn-success" ng-click="adminController.createEntry()">Create Entry</button>
+						</div>
+						<div class="col-sm-8 spaceTop">
+							<table class="linkTable">
+								<tr>
+									<th>Link Path</th><th>Link Label</th><th>Link Description</th>
+								</tr>
+								<tr class="spaceTop" ng-repeat="place in adminController.places">
+									<td><a href="" ng-click="adminController.login(place.areaId)">{{place.link}}</a></td>
+									<td><label>{{place.title}}</label></td>
+									<td><input type="text" placeholder="{{place.description}}" ng-model="adminController.description"></td>
+									<td><button type="submit" ng-click="adminController.updateEntry(place.areaId)">Update Entry</button></td>
+									<td><button type="submit" ng-click="adminController.deleteEntry(place.areaId)">Delete Entry</button></td>
+								</tr>
+							</table>
+						</div>
+					</div>
+					<div ng-show="adminController.isSet(2)">
+						<div class="col-sm-8 spaceTop">
+							<table class="activityTable">
+								<tr>
+									<th>Location</th><th>Anonymous Hits</th><th>User Hits</th>
+									<th>
+										<select ng-model="adminController.count" ng-options="time as time for time in adminController.times" ng-change="adminController.display(adminController.count, true)"></select>
+									</th>
+								</tr>
+								<tr ng-repeat="stats in adminController.outputInfo">
+									<td>{{stats.title}}</td>
+									<td>{{stats.anonHits}}</td>
+									<td>{{stats.userHits}}</td>
+								</tr>
+							</table>
+						</div>
+					</div>
+					<div ng-show="adminController.isSet(3)">
+						<div class="col-sm-8 spaceTop">
+							<table class="activityTable">
+								<tr>
+									<th>Location</th><th>Anonymous Hits</th><th>User Registrations</th><th>Conversion Rate</th>
+									<th>
+										<select ng-model="adminController.rate" ng-options="time as time for time in adminController.times" ng-change="adminController.display(adminController.rate, false)"></select>
+									</th>
+								</tr>
+								<tr ng-repeat="convert in adminController.outputInfo">
+										<td>{{convert.title}}</td>
+										<td>{{convert.anonHits}}</td>
+										<td>{{convert.userHits}}</td>
+										<td>{{convert.conversionRate}}</td>
+								</tr>
+							</table>
+						</div>
+					</div>
+				</section>	
+			</form>
+		</div>
+	</div>
+</div>
