@@ -9,7 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.cooksys.entity.User;
-import com.cooksys.repository.SpringDataUserRepository;
+import com.cooksys.repository.UserRepository;
 import com.cooksys.service.LocationService;
 import com.cooksys.service.UserService;
 
@@ -21,7 +21,7 @@ public class UserServiceImpl implements UserService {
 	private EntityManager em;
 	
 	@Autowired
-	private SpringDataUserRepository repo;
+	private UserRepository repo;
 	
 	@Autowired
 	private LocationService locServ;

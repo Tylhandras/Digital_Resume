@@ -24,11 +24,7 @@ public interface LocationService {
 	public List<Location> indexLocations();
 	
 	public Integer getLocationCount();
-
-	public Long getAllTimeCount(Long areaId);
-
-	public Long getUserCount(Long areaId);
-
+	
 	public List<CountsResponse> getWeekCounts(Boolean hits);
 
 	public List<CountsResponse> getMonthCounts(Boolean hits);
