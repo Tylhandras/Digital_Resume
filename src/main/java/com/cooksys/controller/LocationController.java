@@ -49,26 +49,5 @@ public class LocationController {
 	public Integer numLocations() {
 		return locServ.getLocationCount();
 	}
-	
-	@RequestMapping(value="week/{hits}", method = RequestMethod.GET)
-	public List<CountsResponse> weekCounts(@PathVariable Boolean hits) {
-		return locServ.getWeekCounts(hits);
-	}
-	
-	@RequestMapping(value="month/{hits}", method = RequestMethod.GET)
-	public List<CountsResponse> monthCounts(@PathVariable Boolean hits) {
-		return locServ.getMonthCounts(hits);
-	}
-	
-	@RequestMapping(value="year/{hits}", method = RequestMethod.GET)
-	public List<CountsResponse> yearCounts(@PathVariable Boolean hits) {
-		return locServ.getYearCounts(hits);
-	}
-	
-	@RequestMapping(value="all/{hits}", method = RequestMethod.GET)
-	public List<CountsResponse> allTimeCounts(@PathVariable Boolean hits) {
-		return locServ.getAllTimeCounts(hits);
-	}
-	
 
 }

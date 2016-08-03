@@ -111,24 +111,4 @@ public class LocationServiceImpl implements LocationService {
 		return repo.findAll().size();
 	}
 	
-	@Override
-	public List<CountsResponse> getWeekCounts(Boolean hits) {
-		return null;
-	}
-	
-	@Override
-	public List<CountsResponse> getMonthCounts(Boolean hits) {
-		return null;
-	}
-	
-	@Override
-	public List<CountsResponse> getYearCounts(Boolean hits) {
-		return null;
-	}
-	
-	@Override
-	public List<CountsResponse> getAllTimeCounts(Boolean hits) {
-		return null;
-	}
-
 }

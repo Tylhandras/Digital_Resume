@@ -3,7 +3,6 @@ package com.cooksys.service;
 import java.util.List;
 
 import com.cooksys.entity.Location;
-import com.cooksys.model.CountsResponse;
 
 public interface LocationService {
 	
@@ -24,13 +23,5 @@ public interface LocationService {
 	public List<Location> indexLocations();
 	
 	public Integer getLocationCount();
-	
-	public List<CountsResponse> getWeekCounts(Boolean hits);
-
-	public List<CountsResponse> getMonthCounts(Boolean hits);
-
-	public List<CountsResponse> getYearCounts(Boolean hits);
-
-	public List<CountsResponse> getAllTimeCounts(Boolean hits);
 
 }
